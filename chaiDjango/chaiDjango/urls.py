@@ -17,15 +17,18 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 from . import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+      path("__reload__/", include("django_browser_reload.urls")),
     path("", views.Home, name="Home"),
     path("About/", views.About, name="About"),
     path("Contact_us/", views.Contact_us, name="Contact_us"),
     path("Login/", views.Login, name="Login"),
     path("chai/", include("chai.urls")),
-]
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

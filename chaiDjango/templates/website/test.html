@@ -1,0 +1,19 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% tailwind_css %}
+
+</head>
+<body>
+    <div class="bg-red-300">
+        <h1 class="text-center text-3xl font-bold text-gray-900">Welcome to Chai Django</h1>
+        <p class="text-center text-gray-700">This is a simple website created using Tailwind CSS</p>
+        <a href="{% url 'chai:all_chai' %}" class="text-center text-blue-500 hover:text-blue-700">Visit Chai Page</a>
+    </div>
+</body>
+</html>

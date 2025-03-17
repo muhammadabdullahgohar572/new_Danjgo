@@ -5,7 +5,8 @@ from django.shortcuts import render
 
 
 def Home(request):
-  return  HttpResponse("This is  a Home Page")
+     return render (request,'website/index.html')
+
 
 
    
