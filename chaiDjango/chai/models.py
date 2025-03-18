@@ -9,10 +9,13 @@ class Chaiverity(models.Model):
     ('PL', 'PLAIN'),
     ('EL', 'ELACHI'),
    ]
-    name=models.CharField(max_length=100)
+    name=models.CharField(max_length=20)
     image=models.ImageField(upload_to='chais/')
     time=models.DateTimeField(default=timezone.now)
     type=models.CharField(max_length=2,choices=CHAI_TYPE_CHOICE)
     description=models.TextField(default='')
+    price=models.IntegerField(default=0)
+    
+    
     def __str__(self):
           return self.name

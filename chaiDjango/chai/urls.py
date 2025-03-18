@@ -22,5 +22,7 @@ from . import views
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('order/',views.chai,name="chai"),
+    path('<int:chai_id>/',views.chai_detail,name="chai_detail"),
+    
    
 ]
