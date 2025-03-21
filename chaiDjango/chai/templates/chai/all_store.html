@@ -1,0 +1,22 @@
+{% extends "layout.html" %} 
+{% block title %} Chai Stores {% endblock %}
+
+{% block content %}
+<div class="grid grid-cols-3 gap-4 m-4">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if stores %}
+        <h1>This store uses this Chai Variety:</h1>
+        <ul>
+            {% for store in stores %}
+                <li>{{ store.name }} - {{ store.location }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+{% endblock %}
